@@ -1,60 +1,63 @@
 <!DOCTYPE html>
-<html ng-app="lojaModulo" >
+<html ng-app="lojaModulo">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-    
-    <script src= "./angular/angular.js"></script>
-    <script src="./controller.js"></script>
-    
-    <title>Lojinha virtual do Só Vamu</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
+  </script>
 
-    
+  <script src="./angular/angular.js"></script>
+  <script src="./controller.js"></script>
+
+  <title>Lojinha virtual do Só Vamu</title>
+
+
 </head>
-<body ng-controller="indexController" >  
-    <nav>
-        <h3 ng-bind="titulo"></h3>
-        
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                 Menu
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-            </div>
-    </nav>
 
-
-
-
-
-
-
-    <!-- switches -->
-
-    <div class="form-check form-switch">
-        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-        <!-- <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label> -->
-    </div>
-
-    <!-- Campo de busca -->    
-    <div ng-bind= "busca"></div>
-
-    <div class= busca>
-        <input type="text" ng.model=""placeholder="Busca"> 
-
-    </div>
-
-
-
-    <!--filtro -->
+<body ng-controller="indexController">
+  <nav>
+    <h3 ng-bind="titulo"></h3>
     
+
+    <!-- menu -->
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+        aria-expanded="false">Menu</button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+
+  <!-- switches -->
+
+  <div class="form-check form-switch">
+    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+    <!-- <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label> -->
+  </div>
+
+  <!-- Campo de busca -->
+  <div ng-bind="busca"></div>
+
+  <div class=busca>
+    <input type="text" ng-model="busca_Projeto" placeholder="Busca">
+
+  </div>
+
+
+
+  <!--filtro -->
+     
 <select>
   <option>Filtro</option>
   <option>produto1</option>
@@ -63,68 +66,49 @@
 </select>
 
 
-<!-- cards-->
-<div class="card" style="width: 18rem;"ng-repeat="lista in listaProdutos">
+
+
+  <!-- cards-->
+  <div class="card" style="width: 18rem;" ng-repeat="lista in listaProdutos | filter:busca_Projeto">
     <img src="..." class="card-img-top" alt="...">
-    <div class="card-body" >
-        <p>{{lista.produto}}</p>
-        <p>{{lista.descricao}}</p>
-        <p>{{lista.valor}}</p>
-       
+    <div class="card-body">
+      <p>{{lista.produto}}</p>
+      <p>{{lista.descricao}}</p>
+      <p>{{lista.valor}}</p>
+
     </div>
-</div>
-
-
-
-  
-
-    <!-- paginação -->
-    <nav>
-        <ul class="pagination">
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Anterior">
-              <span aria-hidden="true">&laquo;</span>
-              <!-- <span class="sr-only">Anterior</span> -->
-            </a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item"><a class="page-link" href="#">4</a></li>
-          <li class="page-item"><a class="page-link" href="#">5</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Próximo">
-              <span aria-hidden="true">&raquo;</span>
-              <!-- <span class="sr-only">Próximo</span> -->
-            </a>
-          </li>
-        </ul>
-      </nav>
-
-
-
-        
-
-
-
-    
-  
-
-    
-
-
-    
-
-    <head>
+  </div>
 
 
 
 
-    </head>
+
+  <!-- paginação -->
+  <nav>
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Anterior">
+          <span aria-hidden="true">&laquo;</span>
+          <!-- <span class="sr-only">Anterior</span> -->
+        </a>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item"><a class="page-link" href="#">4</a></li>
+      <li class="page-item"><a class="page-link" href="#">5</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Próximo">
+          <span aria-hidden="true">&raquo;</span>
+          <!-- <span class="sr-only">Próximo</span> -->
+        </a>
+      </li>
+    </ul>
+  </nav>
 
 
 
 
-    
 </body>
+
 </html>
