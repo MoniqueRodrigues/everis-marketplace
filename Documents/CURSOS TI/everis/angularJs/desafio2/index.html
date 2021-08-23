@@ -46,6 +46,10 @@
     <!-- <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label> -->
   </div>
 
+  
+
+
+
   <!-- Campo de busca -->
   <div ng-bind="busca"></div>
 
@@ -56,14 +60,16 @@
 
 
 
-  <!--filtro -->
-     
-<select>
-  <option>Filtro</option>
-  <option>produto1</option>
-  <option>produto2</option>
-  <option>produto3</option>
-</select>
+  <!--filtro(opções) -->
+  {{tituloOpcoes}}
+  <select ng-model= "produtoSelecionado" ng-options="lista.produto for lista in listaProdutos" ng-change="ordenacao">
+  
+
+
+  </select>
+  {{produtoSelecionado}}
+
+ 
 
 
 
