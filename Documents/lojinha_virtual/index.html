@@ -5,9 +5,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/style.css">
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
   </script>
@@ -20,10 +21,10 @@
 
 
 
-<body ng-controller="indexController">
-  
+  <body ng-controller="indexController">
+
     <h3 class="titulo" ng-bind="titulo"></h3>
-    
+
 
     <!-- menu -->
     <!-- <div class="collapse" id="navbarToggleExternalContent">
@@ -34,74 +35,82 @@
     </div> -->
     <nav class="navbar navbar-light bg-light">
       <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+          aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       </div>
     </nav>
 
-   
+</header>
+<main>
+
+
+
   <!-- switche -->
   <div class="form-check form-switch ">
     <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
     <!-- <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label> -->
   </div>
- 
 
 
 
-   <!-- Campo de busca -->  
-   {{tituloBusca}}
-   <div class=busca>
-     <input class="x" type="text" ng-model="busca_Projeto" placeholder=""> 
-   </div>
- 
- 
- 
-   <!--filtro(opções) --> 
-   <select class="select_itens border-dark mb-3" ng-model= "produtoSelecionado" ng-options="lista.produto for lista in listaProdutos" ng-change="ordenacao">
-    </select>
-   <!-- {{produtoSelecionado.produto}} -->
- 
-   
-   <!-- cards-->
-   <div class="card border-dark mb-3"  style="width: 18rem"; ng-repeat="lista in listaProdutos | filter:busca_Projeto">
-     <!-- <img src="..." class="card-img-top" alt="..."> -->
-     <div class="card-body cards">
-       <p>{{lista.produto}}</p>
-       <p>{{lista.descricao}}</p>
-       <p>{{lista.valor}}</p> 
-     </div>
-   </div>
- 
+
+  <!-- Campo de busca -->
+  <!-- {{tituloBusca}} -->
+  
+  <div class=busca>
+    <div class="titulo_busca" ng-bind="tituloBusca"></div>
+    <input class="x" type="text" ng-model="busca_Projeto" placeholder="">
+  </div>
+
+
+
+  <!--filtro(opções) -->
+  <select class="select_itens border-dark mb-3" ng-model="produtoSelecionado"
+    ng-options="lista.produto for lista in listaProdutos" ng-change="ordenacao">
+  </select>
+  <!-- {{produtoSelecionado.produto}} -->
+
+
+  <!-- cards-->
+  <div class="row">
+    <div class="card border-dark mb-3" style="width: 15rem" ; ng-repeat="lista in listaProdutos | filter:busca_Projeto">
+      <!-- <img src="..." class="card-img-top" alt="..."> -->
+      <div class="card-body cards">
+        <p>{{lista.produto}}</p>
+        <p>{{lista.descricao}}</p>
+        <p>{{lista.valor}}</p>
+      </div>
+    </div>
+  </div>
+
+
   <!-- paginação -->
-   <nav>
-     <ul class="pagination">
-       <li class="page-item">
-         <a class="page-link" href="#" aria-label="Anterior">
-           <span aria-hidden="true">&laquo;</span>
-           <!-- <span class="sr-only">Anterior</span> -->
-         </a>
-       </li>
-       <li class="page-item"><a class="page-link" href="#">1</a></li>
-       <li class="page-item"><a class="page-link" href="#">2</a></li>
-       <li class="page-item"><a class="page-link" href="#">3</a></li>
-       <li class="page-item"><a class="page-link" href="#">4</a></li>
-       <li class="page-item"><a class="page-link" href="#">5</a></li>
-       <li class="page-item">
-         <a class="page-link" href="#" aria-label="Próximo">
-           <span aria-hidden="true">&raquo;</span>
-           <!-- <span class="sr-only">Próximo</span> -->
-         </a>
-       </li>
-     </ul>
-   </nav>
+  <nav class="paginacao">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Anterior">
+          <span aria-hidden="true">&laquo;</span>
+          <!-- <span class="sr-only">Anterior</span> -->
+        </a>
+      </li>
+      <li class="page-item "><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item"><a class="page-link" href="#">4</a></li>
+      <li class="page-item"><a class="page-link" href="#">5</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Próximo">
+          <span aria-hidden="true">&raquo;</span>
+          <!-- <span class="sr-only">Próximo</span> -->
+        </a>
+      </li>
+    </ul>
+  </nav>
 
- 
-
-
-
-
+</main>
 </body>
 
 </html>

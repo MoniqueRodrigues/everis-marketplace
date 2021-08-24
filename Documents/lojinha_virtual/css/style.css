@@ -1,9 +1,15 @@
-*{
+/* *{
     padding: 0;
+} */
+
+
+
+main{
+    /* margin-left:20px;   */
+
+
 }
 
-/* 
-titulo */
 .titulo{
     text-align: center;
     margin-top:15px;
@@ -24,43 +30,70 @@ menu */
   
 }
 
-/* .header{
-    margin-left: 100px;
-} */
 
-/* 
 
-campo de busca */
 
+
+/* campo de busca */
 
 .titulo_busca{
-    position:relative;
-    bottom:20px;
+    /* position:relative; */
+    /* bottom:20px; */
+margin-left:200px;
+ 
 
 
 } 
 
 
 .x{
-    padding: 5px 450px;
-    border-radius: 20px;
+    padding: 5px 390px;
+    padding-left:400px ;
+    padding-right:400px;
+    border-radius: 20px;   
+    display: flex;
+    margin:auto;
+
 }
 
 
 /* filtro */
 .select_itens{
     margin-top:40px;
+    margin-left: 150px;
+    
 }
 
 
 /* cards */
-.cards{
+.row{
     display: flex;
-    flex-direction: column;  
+    justify-content:space-around;
+
+   
 }
 
+.card{
+    margin-left:100px;
+ 
+} 
+ 
+
+/* paginação */
+
+.paginacao{
+    display: flex;
+    margin-top:100px;
+  justify-content:center;
+ 
+    
+
+}
+.page-link{
+    color:#000000;
 
 
+}
 
 
 
