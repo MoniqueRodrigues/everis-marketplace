@@ -24,3 +24,35 @@
     padding:10px 60px;
 
 }
+
+
+
+
+/* modalCancela */
+
+/* #exampleModal{
+    width:40px;
+} */
+
+.modal-footer{
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-around;
+
+}
+.bi-exclamation-triangle-fill{
+    position: relative;
+    left: 224px;
+}
+.modal-title{
+    text-align: center;
+    margin-top: 50px;
+
+}
+
+.btn{
+    background-color: transparent;
+    color: #000000;
+    border: 1px solid #ced4da;
+    padding:10px 60px;
+}
