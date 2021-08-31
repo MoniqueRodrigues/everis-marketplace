@@ -1,9 +1,15 @@
-angular.module("lojaModulo", []);
+angular.module("lojaModulo", ['cur.$mask']);
 angular.module("lojaModulo").controller("indexController", function ($scope) {
 
 
     $scope.titulo = "Lojinha Virtual do Só Vamu";
 
+    $scope.produto = {
+        "produto": "",
+        "descricao": "",
+        "valor": "",
+        "quantidade": 0
+    }
 
 
     //switch
@@ -15,16 +21,8 @@ angular.module("lojaModulo").controller("indexController", function ($scope) {
 
     }
 
-
-
-
-
     //filtro(opções)
     $scope.tituloBusca = "O que você está procurando?"
-
-
-
-
 
     //busca e filtragem
     $scope.listaProdutos = [{
