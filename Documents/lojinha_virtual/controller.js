@@ -44,4 +44,9 @@ angular.module("lojaModulo").controller("indexController", function ($scope) {
 
     ];
 
+
+
+
+
+
 })
