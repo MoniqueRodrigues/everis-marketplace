@@ -33,7 +33,7 @@
 Inválido = {{adicionaProduto.$invalid}} -->
 
 
-  <!-- adiciona produto -->
+  <!-- formulário adiciona produto -->
   <form name="adicionaProduto" class="adicionaProduto container">
     <div class="mb-3">
       <label for="" class="form-label">Nome do produto:</label>
@@ -42,8 +42,8 @@ Inválido = {{adicionaProduto.$invalid}} -->
       <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
     </div>
     <div class="mb-3">
-      <label for="descricao" ng-model="produto.descricao" class="form-label">Descrição do produto:</label>
-      <input type="text" ng-required="true" class="form-control" id="descricao">
+      <label for="descricao" class="form-label">Descrição do produto:</label>
+      <input type="text" ng-model="produto.descricao" ng-required="true" class="form-control" id="descricao">
     </div>
     <div class="row g-3">
       <!-- <div class="col-sm-7">
@@ -76,12 +76,12 @@ Inválido = {{adicionaProduto.$invalid}} -->
     <!-- adicionar -->
     <div ng-if="adicionaProduto.$invalid">
       <button ng-click="" type="submit" class="btn btn-secondary btn-sm btn-adicionar" data-bs-toggle="modal"
-      data-bs-target="#modalErro">Adicionar</button>
+        data-bs-target="#modalErro">Adicionar</button>
     </div>
     <div ng-if="adicionaProduto.$valid">
       <button ng-click="" type="submit" class="btn btn-secondary btn-sm btn-adicionar" data-bs-toggle="modal"
-      data-bs-target="#modalAdicionar">Adicionar</button>
-    </div>    
+        data-bs-target="#modalAdicionar">Adicionar</button>
+    </div>
   </div>
 
 
@@ -108,7 +108,9 @@ Inválido = {{adicionaProduto.$invalid}} -->
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
-          <button type="button" class="btn btn-primary">Sim</button>
+          <a href="../html/index.html">
+            <button type="button" class="btn btn-primary">Sim</button>
+          </a>
         </div>
       </div>
     </div>
@@ -129,8 +131,10 @@ Inválido = {{adicionaProduto.$invalid}} -->
           <p class="modalSucesso">Deseja cadastrar outro produto?</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
-          <button type="button" class="btn btn-primary">Sim</button>
+          <a href="../html/index.html">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+          </a>
+          <button ng-click="limpaForm()" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sim</button>
         </div>
       </div>
     </div>
@@ -151,8 +155,12 @@ Inválido = {{adicionaProduto.$invalid}} -->
           <p class="modalSucesso">Deseja cadastrar novamente?</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
-          <button type="button" class="btn btn-primary">Sim</button>
+          <a href="../html/index.html">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+          </a>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Sim</button>
+
+
         </div>
       </div>
     </div>

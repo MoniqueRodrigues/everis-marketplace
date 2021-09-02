@@ -44,8 +44,17 @@ angular.module("lojaModulo").controller("indexController", function ($scope) {
 
     ];
 
-
-
+    $scope.limpaForm=function(){
+        
+        $scope.produto = {
+            "produto": "",
+            "descricao": "",
+            "valor": "",
+            "quantidade": 0
+        }
+            
+            
+        }
 
 
 
