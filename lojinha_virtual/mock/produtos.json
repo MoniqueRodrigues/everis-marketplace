@@ -1,0 +1,28 @@
+{
+    "produtos": [
+
+        {   "id":1,
+            "produto": "sabão em pó",
+            "descricao": "bababababa",
+            "valor": "R$150,00"
+        },
+    
+
+        {   "id":2,
+            "produto": "amaciante",
+            "descricao": "bebebebebe",
+            "valor": "R$160,00"
+        },
+
+        {    "id":3,
+            "produto": "tv",
+            "descricao": "55 polegadas",
+            "valor": "R$2500,00"
+        },      
+        {   "id":4,
+            "produto": "geladeira",
+            "descricao":"bibibi",
+            "valor": "R$3000,00"
+        }
+    ]
+}

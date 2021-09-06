@@ -19,7 +19,7 @@ menu */
 /* switches */
 .form-switch{
     display: flex;
-    margin-left:1300px;
+    margin-left:1200px;
   
 }
 
@@ -60,7 +60,7 @@ margin-left:200px;
 .adiciona-produto{
    display:flex;
    position:relative;
-   left:1160px;
+   left:1120px;
   
 }
 .adiciona{
@@ -113,5 +113,5 @@ margin-left:200px;
 }
 
 
-/* modal editar */
+
 
