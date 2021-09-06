@@ -34,7 +34,7 @@ Inválido = {{adicionaProduto.$invalid}} -->
 
 
   <!-- formulário adiciona produto -->
-  <form name="adicionaProduto" class="adicionaProduto container">
+  <form  name="adicionaProduto" class="adicionaProduto container">
     <div class="mb-3">
       <label for="" class="form-label">Nome do produto:</label>
       <input type="text" ng-required="true" ng-model="produto.nome" class="form-control" id="produto"
@@ -75,12 +75,12 @@ Inválido = {{adicionaProduto.$invalid}} -->
 
     <!-- adicionar -->
     <div ng-if="adicionaProduto.$invalid">
-      <button ng-click="" type="submit" class="btn btn-secondary btn-sm btn-adicionar" data-bs-toggle="modal"
+      <button class="btn btn-secondary btn-sm btn-adicionar" data-bs-toggle="modal"
         data-bs-target="#modalErro">Adicionar</button>
     </div>
     <div ng-if="adicionaProduto.$valid">
-      <button ng-click="" type="submit" class="btn btn-secondary btn-sm btn-adicionar" data-bs-toggle="modal"
-        data-bs-target="#modalAdicionar">Adicionar</button>
+      <button ng-click="adiciona_produto()"class="btn btn-secondary btn-sm btn-adicionar" data-bs-toggle="modal"
+      data-bs-target="#modalAdicionar">Adicionar</button>
     </div>
   </div>
 

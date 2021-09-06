@@ -12,11 +12,28 @@ angular.module("lojaModulo").controller("indexController", function ($scope, $ht
         $http.delete("http://localhost:3000/produtos/"+id)
     }
 
+
+    //adiciona produto:
+    $scope.adiciona_produto = function () {        
+        $http({
+            method: 'POST',
+            url:"http://localhost:3000/produtos",
+            data: JSON.stringify($scope.produto)
+          })
+          .then(function (response) {          
+            $scope.listaProdutos.push(response.data)
+          })      
+               
+
+    }
+
+
+
     $scope.titulo = "Lojinha Virtual do Só Vamu";
 
     $scope.produto = {
         "id": 0,
-        "produto": "",
+        "nome": "",
         "descricao": "",
         "valor": "",
         "quantidade": ""

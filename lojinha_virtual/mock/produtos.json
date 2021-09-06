@@ -1,28 +1,30 @@
 {
-    "produtos": [
-
-        {   "id":1,
-            "produto": "sabão em pó",
-            "descricao": "bababababa",
-            "valor": "R$150,00"
-        },
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "sabão em pó",
+      "descricao": "bababababa",
+      "valor": "R$150,00"
+    },
+    {
+      "id": 2,
+      "nome": "amaciante",
+      "descricao": "bebebebebe",
+      "valor": "R$160,00"
+    },
+    {
+      "id": 3,
+      "nome": "tv",
+      "descricao": "55 polegadas",
+      "valor": "R$2500,00"
+    },
+    {
+      "id": 4,
+      "nome": "video-game",
+      "descricao": "bom",
+      "valor": "40.00",
+      "quantidade": 5
+    }
     
-
-        {   "id":2,
-            "produto": "amaciante",
-            "descricao": "bebebebebe",
-            "valor": "R$160,00"
-        },
-
-        {    "id":3,
-            "produto": "tv",
-            "descricao": "55 polegadas",
-            "valor": "R$2500,00"
-        },      
-        {   "id":4,
-            "produto": "geladeira",
-            "descricao":"bibibi",
-            "valor": "R$3000,00"
-        }
-    ]
+  ]
 }
