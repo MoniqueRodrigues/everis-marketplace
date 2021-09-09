@@ -17,15 +17,15 @@
   </script>
 
   <script src="../angular/angular.js"></script>
-  <script src="../controller.js"></script>
-
+  <script src="../module.js"></script>
+  <script src="../controller/telaAdicionarController.js"></script>
   <script src="../node_modules/angularjs-currency-input-mask/dist/angularjs-currency-input-mask.min.js"></script>
 
 
 </head>
 
 
-<body ng-controller="indexController">
+<body ng-controller="telaAdicionarController">
   <h3 class="titulo" ng-bind="titulo"></h3>
 
 
@@ -34,7 +34,7 @@ Inválido = {{adicionaProduto.$invalid}} -->
 
 
   <!-- formulário adiciona produto -->
-  <form  name="adicionaProduto" class="adicionaProduto container">
+  <form action="#" name="adicionaProduto" class="adicionaProduto container">
     <div class="mb-3">
       <label for="" class="form-label">Nome do produto:</label>
       <input type="text" ng-required="true" ng-model="produto.nome" class="form-control" id="produto"
@@ -65,28 +65,24 @@ Inválido = {{adicionaProduto.$invalid}} -->
   </form>
 
   <!-- botoes principais: -->
-
-
-
   <div class="botao_adiciona_exclui">
+    
     <!-- cancelar -->
-    <button ng-click="" type="button" class="btn btn-primary btn-sm btn-cancelar" data-bs-toggle="modal"
+    <button type="button" class="btn btn-primary btn-sm btn-cancelar" data-bs-toggle="modal"
       data-bs-target="#exampleModal">Cancelar</button>
 
     <!-- adicionar -->
-    <div ng-if="adicionaProduto.$invalid">
-      <button class="btn btn-secondary btn-sm btn-adicionar" data-bs-toggle="modal"
-        data-bs-target="#modalErro">Adicionar</button>
-    </div>
-    <div ng-if="adicionaProduto.$valid">
-      <button ng-click="adiciona_produto()"class="btn btn-secondary btn-sm btn-adicionar" data-bs-toggle="modal"
-      data-bs-target="#modalAdicionar">Adicionar</button>
-    </div>
+      <button ng-click="adiciona_produto($event, adicionaProduto.$valid)" data-bs-toggle="modal"data-bs-target="#modal"
+      class="btn btn-secondary btn-sm btn-adicionar" >Adicionar</button>
+
+      
+      
   </div>
 
 
 
-  </div>
+  <!-- MODAL sucesso ou erro-->
+  <div class="row" ng-include="'../html/modal.html'"></div>
 
 
   <!-- modal cancelar -->
@@ -115,67 +111,6 @@ Inválido = {{adicionaProduto.$invalid}} -->
       </div>
     </div>
   </div>
-
-
-  <!-- modal sucesso-->
-
-
-  <div class="modal fade" id="modalAdicionar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
-        </div>
-        <div class="modal-body">
-          <h5 class="modal-title" id="exampleModalLabel ">Produto adicionado com sucesso</h5>
-          <p class="modalSucesso">Deseja cadastrar outro produto?</p>
-        </div>
-        <div class="modal-footer">
-          <a href="../html/index.html">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
-          </a>
-          <button ng-click="limpaForm()" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sim</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-  <!-- modal erro-->
-
-  <div class="modal fade" id="modalErro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
-        </div>
-        <div class="modal-body">
-          <h5 class="modal-title" id="exampleModalLabel ">Erro ao cadastrar o produto</h5>
-          <p class="modalSucesso">Deseja cadastrar novamente?</p>
-        </div>
-        <div class="modal-footer">
-          <a href="../html/index.html">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
-          </a>
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Sim</button>
-
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
 
 </body>
 
