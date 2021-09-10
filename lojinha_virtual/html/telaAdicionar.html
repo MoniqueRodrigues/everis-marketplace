@@ -18,6 +18,7 @@
 
   <script src="../angular/angular.js"></script>
   <script src="../module.js"></script>
+  <script src="../directive/ModalDirective.js"></script>
   <script src="../controller/telaAdicionarController.js"></script>
   <script src="../node_modules/angularjs-currency-input-mask/dist/angularjs-currency-input-mask.min.js"></script>
 
@@ -32,9 +33,8 @@
   <!-- Válido = {{adicionaProduto.$valid}}
 Inválido = {{adicionaProduto.$invalid}} -->
 
-
   <!-- formulário adiciona produto -->
-  <form action="#" name="adicionaProduto" class="adicionaProduto container">
+  <form ng-submit="adiciona_produto($event, adicionaProduto.$valid)" name="adicionaProduto" class="adicionaProduto container">
     <div class="mb-3">
       <label for="" class="form-label">Nome do produto:</label>
       <input type="text" ng-required="true" ng-model="produto.nome" class="form-control" id="produto"
@@ -61,10 +61,7 @@ Inválido = {{adicionaProduto.$invalid}} -->
       </div>
 
     </div>
-    <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
-  </form>
-
-  <!-- botoes principais: -->
+      <!-- botoes principais: -->
   <div class="botao_adiciona_exclui">
     
     <!-- cancelar -->
@@ -72,12 +69,16 @@ Inválido = {{adicionaProduto.$invalid}} -->
       data-bs-target="#exampleModal">Cancelar</button>
 
     <!-- adicionar -->
-      <button ng-click="adiciona_produto($event, adicionaProduto.$valid)" data-bs-toggle="modal"data-bs-target="#modal"
+      <button data-bs-toggle="modal"data-bs-target="#modal"
       class="btn btn-secondary btn-sm btn-adicionar" >Adicionar</button>
 
       
       
   </div>
+    <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+  </form>
+
+
 
 
 

@@ -1,14 +1,7 @@
 angular.module("lojaModulo")
     .controller("telaAdicionarController", function ($scope, $http) {
 
-        $scope.produto = {
-            "id": 0,
-            "nome": "",
-            "descricao": "",
-            "valor": "",
-            "quantidade": ""
-        }
-
+        $scope.produto = produtoVazio()
 
         //conteúdo modais:
         const modalSucesso = {
@@ -20,66 +13,37 @@ angular.module("lojaModulo")
             "descricao": "Deseja cadastrar novamente?"
         }
 
+        $scope.modal = modalErro
+
         $scope.titulo = "Vamu que vamu"
 
 
-        //adiciona produto:
-        // $scope.adiciona_produto = function ($event, isValid) {
-        //     if (isValid) {
-        //         $http({
-        //             method: 'POST',
-        //             url: "http://localhost:3000/produtos",
-        //             data: JSON.stringify($scope.produto)
-        //         }).then(function (response) {
-        //             $scope.listaProdutos.push(response.data);
-        //             return
-        //         })
-        //         $scope.modal = modalSucesso;
-        //     } else {
-        //         $scope.modal = modalErro;
-        //     }
-        // }
-
-
-
-        //teste:
-
-        //adiciona produto:
-        $scope.adiciona_produto = function ($event, isValid) {
+       //adiciona produto:
+        $scope.adiciona_produto = function (isValid) {
             if (isValid) {
-                $http({
-                    method: 'POST',
-                    url: "http://localhost:3000/produtos",
-                    data: JSON.stringify($scope.produto)
-                }).then(function (response) {
-                    $scope.listaProdutos.push(response.data);                 
-                    
+                $http.post(
+                    "http://localhost:3000/produtos", 
+                    JSON.stringify($scope.produto)
+                ) .then(function (response) {
+                    $scope.listaProdutos.push(response.data);             
                 });  
                 $scope.modal = modalSucesso;
+                $scope.produto = produtoVazio();
             } else {
-                $scope.modal = modalErro;
+                 $scope.modal = modalErro;
             }
         }
 
-        
-        //dispara modal:     
-        // $scope.open = function () {
-        //     var disparaModal = $modal.open({
-        //         templateUrl: 'modal.html',
-        //         controller: 'telaAdicionarController'
-        //     })
-        //     $scope.modal = modalSucesso;
-
-        // };
-
-
-
-
-
-
-
-
-
+        function produtoVazio() {
+            return {
+                "id": 0,
+                "nome": "",
+                "descricao": "",
+                "valor": "",
+                "quantidade": ""
+            }
+    
+        }
 
     }
-    )
+)
