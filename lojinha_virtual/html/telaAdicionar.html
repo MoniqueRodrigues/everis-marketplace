@@ -34,7 +34,7 @@
 Inválido = {{adicionaProduto.$invalid}} -->
 
   <!-- formulário adiciona produto -->
-  <form ng-submit="adiciona_produto($event, adicionaProduto.$valid)" name="adicionaProduto" class="adicionaProduto container">
+  <form ng-submit="adiciona_produto(adicionaProduto.$valid)" name="adicionaProduto" class="adicionaProduto container">
     <div class="mb-3">
       <label for="" class="form-label">Nome do produto:</label>
       <input type="text" ng-required="true" ng-model="produto.nome" class="form-control" id="produto"

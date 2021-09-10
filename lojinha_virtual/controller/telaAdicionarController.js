@@ -1,7 +1,7 @@
 angular.module("lojaModulo")
     .controller("telaAdicionarController", function ($scope, $http) {
 
-        $scope.produto = produtoVazio()
+        $scope.produto = limpaForm()
 
         //conteúdo modais:
         const modalSucesso = {
@@ -28,13 +28,13 @@ angular.module("lojaModulo")
                     $scope.listaProdutos.push(response.data);             
                 });  
                 $scope.modal = modalSucesso;
-                $scope.produto = produtoVazio();
+                $scope.produto = limpaForm();
             } else {
                  $scope.modal = modalErro;
             }
         }
 
-        function produtoVazio() {
+        function limpaForm() {
             return {
                 "id": 0,
                 "nome": "",
