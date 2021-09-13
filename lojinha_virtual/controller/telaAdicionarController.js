@@ -1,9 +1,13 @@
 angular.module("lojaModulo")
     .controller("telaAdicionarController", function ($scope, $http) {
 
-        $scope.produto = limpaForm()
+        $scope.titulo = "Vamu que vamu"
 
-        //conteúdo modais:
+        // $scope.produto = limpaForm()
+
+        //conteúdo modal sucesso ou erro:
+
+
         const modalSucesso = {
             "titulo": "Produto adicionado com sucesso",
             "descricao": "Deseja cadastrar outro produto?"
@@ -13,37 +17,51 @@ angular.module("lojaModulo")
             "descricao": "Deseja cadastrar novamente?"
         }
 
-        $scope.modal = modalErro
-
-        $scope.titulo = "Vamu que vamu"
+        $scope.modal = modalErro;
 
 
-       //adiciona produto:
+        //adiciona produto no formulário e envia para o Banco de dados:    
         $scope.adiciona_produto = function (isValid) {
             if (isValid) {
                 $http.post(
-                    "http://localhost:3000/produtos", 
+                    "http://localhost:3000/produtos",
                     JSON.stringify($scope.produto)
-                ) .then(function (response) {
-                    $scope.listaProdutos.push(response.data);             
-                });  
+                ).then(function (response) {
+                    $scope.listaProdutos.push(response.data);
+                });
                 $scope.modal = modalSucesso;
-                $scope.produto = limpaForm();
+                // limpaForm()
+
             } else {
-                 $scope.modal = modalErro;
+                $scope.modal = modalErro;
             }
         }
 
+
+        
+        //modalsucesso:carrega página no botao do sim:
+        $scope.limpa_pagina = function () {
+            if ($scope.modal === modalSucesso) {
+                limpaForm()
+
+            }
+
+        };
+
+        //limpa Formulário:
         function limpaForm() {
-            return {
+            $scope.produto = {
                 "id": 0,
                 "nome": "",
                 "descricao": "",
                 "valor": "",
                 "quantidade": ""
-            }
-    
-        }
+            };
+
+        };
+
+
+
 
     }
-)
+    )

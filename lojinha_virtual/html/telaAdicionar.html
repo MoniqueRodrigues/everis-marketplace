@@ -14,7 +14,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
-  </script>
+    </script>
 
   <script src="../angular/angular.js"></script>
   <script src="../module.js"></script>
@@ -33,6 +33,7 @@
   <!-- Válido = {{adicionaProduto.$valid}}
 Inválido = {{adicionaProduto.$invalid}} -->
 
+
   <!-- formulário adiciona produto -->
   <form ng-submit="adiciona_produto(adicionaProduto.$valid)" name="adicionaProduto" class="adicionaProduto container">
     <div class="mb-3">
@@ -44,7 +45,9 @@ Inválido = {{adicionaProduto.$invalid}} -->
     <div class="mb-3">
       <label for="descricao" class="form-label">Descrição do produto:</label>
       <input type="text" ng-model="produto.descricao" ng-required="true" class="form-control" id="descricao">
+    
     </div>
+  
     <div class="row g-3">
       <!-- <div class="col-sm-7">
               <input type="text" class="form-control" placeholder="City" aria-label="City">
@@ -61,20 +64,16 @@ Inválido = {{adicionaProduto.$invalid}} -->
       </div>
 
     </div>
-      <!-- botoes principais: -->
-  <div class="botao_adiciona_exclui">
-    
-    <!-- cancelar -->
-    <button type="button" class="btn btn-primary btn-sm btn-cancelar" data-bs-toggle="modal"
-      data-bs-target="#exampleModal">Cancelar</button>
+    <!-- botoes principais: -->
+    <div class="botao_adiciona_exclui">
+      <!-- cancelar -->
+      <button type="button" class="btn btn-primary btn-sm btn-cancelar" data-bs-toggle="modal"
+        data-bs-target="#exampleModal">Cancelar</button>
 
-    <!-- adicionar -->
-      <button data-bs-toggle="modal"data-bs-target="#modal"
-      class="btn btn-secondary btn-sm btn-adicionar" >Adicionar</button>
-
-      
-      
-  </div>
+      <!-- adicionar -->
+      <button data-bs-toggle="modal" data-bs-target="#modal"
+        class="btn btn-secondary btn-sm btn-adicionar">Adicionar</button>
+    </div>
     <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
   </form>
 

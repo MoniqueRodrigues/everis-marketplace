@@ -1,0 +1,48 @@
+<!-- modal editar -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" ng-repeat="lista in listaProdutos">
+
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edição do produto: {{lista.nome}}</h5>
+        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3 row">
+            <label for="inputProduto" class="col-sm-5 col-form-label">Nome do produto:</label>
+            <div class="col-sm-7">
+              <input type="text" ng-required="true" ng-model="lista.nome" class="form-control" id="produto">
+
+
+            </div>
+
+          </div>
+          <div class="mb-3 row">
+            <label for="inputDecricao" class="col-sm-5 col-form-label">Descrição do produto:</label>
+            <div class="col-sm-7">
+              <input type="text" ng-model="lista.descricao" ng-required="true" class="form-control">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="inputValor" class="col-sm-5 col-form-label">Valor do produto:</label>
+            <div class="col-sm-7">
+              <input type="text" ng-model="lista.valor" mask-currency="'R$'"
+                config="{group:'.',decimal:',',indentation:' '}" name="valor" ng-required="true" class="form-control">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="inputQuantidade" class="col-sm-5 col-form-label">Quantidade do produto:</label>
+            <div class="col-sm-7">
+              <input type="number" ng-required="true" ng-model="lista.quantidade" class="form-control" min="1">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer footer-editar">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>
