@@ -24,26 +24,33 @@ angular.module("lojaModulo")
 
 
 
-        // edita produto na página principal:   
-        // chamar o serviço, recuperar as informações e exibir elas
-        $scope.edita_produto = function (isValid, produto) {
-            console.log("meu objeto", produto)
+        //visualizar as informações do produto no modal:
+        $scope.teste=function(produto,index){
+            console.log("produto", produto);
+            console.log("index", index);
+
+            $scope.produtoSelecionado = produto;
+        };
+
+        // edita produto na página principal:       
+        $scope.edita_produto = function (isValid, produtoSelecionado) {
+            // console.log("meu objeto", produto)
             if (isValid) {
                 $http({
-                    url: "http://localhost:3000/produtos/" + produto.id,
+                    url: "http://localhost:3000/produtos/" + produtoSelecionado.id,
                     method: 'PUT',
-                    data: produto,
+                    data: produtoSelecionado,
                     headers: {
                         "Content-Type": "application/json"
                     }
                 }).then(function (response) {
-                    console.log(response)                   
-                    produto = response.data;              
-                   
-                }, function(err) {
+                    console.log(response)
+                    produtoSelecionado = response.data;
+
+                }, function (err) {
                     console.log(err)
                 });
-              
+
             }
         }
 
@@ -51,10 +58,18 @@ angular.module("lojaModulo")
 
 
 
-       
-      
-            
+        //oculta produto:
+        $scope.oculta_produto= function(produto){
+            if(produto.quantidade === 0 || produto.valor === 0){
+                console.log("card ocultado")
+                              
+            }
 
+
+
+        }
+
+      
 
 
 

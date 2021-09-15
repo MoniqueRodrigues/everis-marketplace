@@ -1,22 +1,22 @@
 <!-- modal editar -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" ng-repeat="produto in listaProdutos"  >
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
-  <div class="modal-dialog" >
-    <div class="modal-content" >
+  <div class="modal-dialog">
+    <div class="modal-content">
       <div class="modal-header" >
-        <h5 class="modal-title" id="exampleModalLabel">Edição do produto: {{produto.nome}}</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Edição do produto: {{produtoSelecionado.nome}}</h5>
         <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
       </div>
-      <div class="modal-body">
+      <div class="modal-body" >
 
         <!-- formulário edita produto -->
         <form ng-submit="edita_produto(editaProduto.$valid,produto)" name="editaProduto" class="editaProduto">
           <div class="mb-3 row">
-            <input type="hidden" ng-model="editar.id"/>
+            <input type="hidden" ng-model="editar.id" />
             <label for="inputProduto" class="col-sm-5 col-form-label">Nome do produto:</label>
             <div class="col-sm-7">
-              <input type="text" ng-required="true"  ng-model="produto.nome" class="form-control" id="produto">
-      
+              <input type="text" ng-required="true" ng-model="produtoSelecionado.nome" class="form-control" id="produto">
+
 
             </div>
 
@@ -24,30 +24,30 @@
           <div class="mb-3 row">
             <label for="inputDecricao" class="col-sm-5 col-form-label">Descrição do produto:</label>
             <div class="col-sm-7">
-              <input type="text" ng-model="produto.descricao" ng-required="true" class="form-control">
-              
+              <input type="text" ng-model="produtoSelecionado.descricao" ng-required="true" class="form-control">
+
             </div>
           </div>
           <div class="mb-3 row">
             <label for="inputValor" class="col-sm-5 col-form-label">Valor do produto:</label>
             <div class="col-sm-7">
-              <input type="text" ng-model="produto.valor" mask-currency="'R$'"
+              <input type="text" ng-model="produtoSelecionado.valor" mask-currency="'R$'"
                 config="{group:'.',decimal:',',indentation:' '}" name="valor" ng-required="true" class="form-control">
             </div>
           </div>
           <div class="mb-3 row">
             <label for="inputQuantidade" class="col-sm-5 col-form-label">Quantidade do produto:</label>
             <div class="col-sm-7">
-              <input type="number" ng-required="true" ng-model="produto.quantidade" class="form-control" min="1">
+              <input type="number" ng-required="true" ng-model="produtoSelecionado.quantidade" class="form-control" min="0">
             </div>
           </div>
-          <div class="modal-footer footer-editar">
-            <input type="submit" class="btn btn-primary" data-bs-dismiss="modal" value= "Confirmar"> 
+          <div class="modal-footer footer-editar">           
             <button type="button" class="btn btn-secondary">Cancelar</button>
+            <input type="submit" class="btn btn-secondary" ng-hide="oculta_produto(produtoSelecionado)" data-bs-dismiss="modal" value="Confirmar" >
           </div>
         </form>
       </div>
-      
+
     </div>
   </div>
 </div>
