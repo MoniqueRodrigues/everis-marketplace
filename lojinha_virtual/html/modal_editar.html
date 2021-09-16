@@ -1,4 +1,5 @@
-<!-- modal editar -->
+<!-- modal editar: -->
+
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
   <div class="modal-dialog">
@@ -10,7 +11,7 @@
       <div class="modal-body" >
 
         <!-- formulário edita produto -->
-        <form ng-submit="edita_produto(editaProduto.$valid,produto)" name="editaProduto" class="editaProduto">
+        <form ng-submit="edita_produto(editaProduto.$valid, produtoSelecionado)" name="editaProduto" class="editaProduto">
           <div class="mb-3 row">
             <input type="hidden" ng-model="editar.id" />
             <label for="inputProduto" class="col-sm-5 col-form-label">Nome do produto:</label>

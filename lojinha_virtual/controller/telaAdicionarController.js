@@ -30,7 +30,6 @@ angular.module("lojaModulo")
                     $scope.listaProdutos.push(response.data);
                 });
                 $scope.modal = modalSucesso;
-                // limpaForm()
 
             } else {
                 $scope.modal = modalErro;
@@ -38,12 +37,11 @@ angular.module("lojaModulo")
         }
 
 
-        
+
         //modalsucesso:carrega página no botao do sim:
         $scope.limpa_pagina = function () {
             if ($scope.modal === modalSucesso) {
                 limpaForm()
-
             }
 
         };

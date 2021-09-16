@@ -25,30 +25,33 @@ angular.module("lojaModulo")
 
 
         //visualizar as informações do produto no modal:
-        $scope.teste=function(produto,index){
-            console.log("produto", produto);
-            console.log("index", index);
-
-            $scope.produtoSelecionado = produto;
+        $scope.mostraProduto = function (lista, index) {
+            // console.log("produto", lista);
+            // console.log("index", lista);
+            $scope.produtoSelecionado = lista;
         };
 
-        // edita produto na página principal:       
-        $scope.edita_produto = function (isValid, produtoSelecionado) {
-            // console.log("meu objeto", produto)
+
+
+        // edita produto na página principal:
+        $scope.edita_produto = function (isValid, produto) {
+            console.log("meu objeto", produto)
+             console.log("is valid?", isValid)
+
             if (isValid) {
                 $http({
-                    url: "http://localhost:3000/produtos/" + produtoSelecionado.id,
+                    url: "http://localhost:3000/produtos/"+ produto.id,
                     method: 'PUT',
-                    data: produtoSelecionado,
+                    data: produto,
                     headers: {
                         "Content-Type": "application/json"
                     }
                 }).then(function (response) {
-                    console.log(response)
-                    produtoSelecionado = response.data;
+                    console.log("dados alterados com sucesso",response)
+                    produto = response.data;
 
                 }, function (err) {
-                    console.log(err)
+                    console.log("erro ao editar",err)
                 });
 
             }
@@ -57,19 +60,18 @@ angular.module("lojaModulo")
 
 
 
-
         //oculta produto:
-        $scope.oculta_produto= function(produto){
-            if(produto.quantidade === 0 || produto.valor === 0){
-                console.log("card ocultado")
-                              
-            }
+        // $scope.oculta_produto= function(produto){
+        //     if(produto.quantidade === 0 || produto.valor === 0){
+        //         // console.log("card ocultado")
+
+        //     }
 
 
 
-        }
+        // }
 
-      
+
 
 
 
