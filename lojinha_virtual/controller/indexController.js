@@ -4,7 +4,7 @@ angular.module("lojaModulo")
 
         $scope.titulo = "Lojinha Virtual do Só Vamu";
         $scope.tituloBusca = "O que você está procurando?" //filtro(opções)
-        $scope.listaProdutos = []
+        $scope.listaProdutos = [];
 
 
         //deleta produto:
@@ -57,19 +57,14 @@ angular.module("lojaModulo")
             }
         }
 
+        // oculta produto:
+        $scope.ocultar= function(produto){
+            $scope.oculta= true;
+            if(produto.valor < 1 || produto.quantidade === 0 ){
+                return  $scope.oculta;
+            }              
 
-
-
-        //oculta produto:
-        // $scope.oculta_produto= function(produto){
-        //     if(produto.quantidade === 0 || produto.valor === 0){
-        //         // console.log("card ocultado")
-
-        //     }
-
-
-
-        // }
+        }
 
 
 
