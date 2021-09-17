@@ -35,36 +35,53 @@ angular.module("lojaModulo")
 
         // edita produto na página principal:
         $scope.edita_produto = function (isValid, produto) {
-            console.log("meu objeto", produto)
-             console.log("is valid?", isValid)
+            // console.log("meu objeto", produto)
+            // console.log("is valid?", isValid)
 
             if (isValid) {
                 $http({
-                    url: "http://localhost:3000/produtos/"+ produto.id,
+                    url: "http://localhost:3000/produtos/" + produto.id,
                     method: 'PUT',
                     data: produto,
                     headers: {
                         "Content-Type": "application/json"
                     }
                 }).then(function (response) {
-                    console.log("dados alterados com sucesso",response)
+                    console.log("dados alterados com sucesso", response)
                     produto = response.data;
 
                 }, function (err) {
-                    console.log("erro ao editar",err)
+                    console.log("erro ao editar", err)
                 });
 
             }
         }
 
         // oculta produto:
-        $scope.ocultar= function(produto){
-            $scope.oculta= true;
-            if(produto.valor < 1 || produto.quantidade === 0 ){
-                return  $scope.oculta;
-            }              
+        // $scope.ocultar = function (produto) {
+        //     console.log("oculta, produto")
+        //     $scope.oculta = true;
+        //     if (produto.valor <1 || produto.quantidade === 0) {
+        //         return $scope.oculta;
+        //     }
+
+        // }
+
+
+        // mostra produto:
+        $scope.mostrar = function (produto) {
+            console.log("mostra", produto)
+            $scope.mostra = true;
+            if (produto.quantidade != 0 || produto.valor != 0) {
+                return $scope.mostra;
+
+            }
+            
 
         }
+
+
+
 
 
 

@@ -11,7 +11,7 @@
       <div class="modal-body" >
 
         <!-- formulário edita produto -->
-        <form ng-submit="edita_produto(editaProduto.$valid, produtoSelecionado)" name="editaProduto" class="editaProduto" >
+        <form ng-submit="edita_produto(editaProduto.$valid, produtoSelecionado)" name="editaProduto" class="editaProduto" ng-show = "produtoSelecionado.valor > 0 || produtoSelecionado.quantidade > 0" >
           <div class="mb-3 row">
             <input type="hidden" ng-model="editar.id" />
             <label for="inputProduto" class="col-sm-5 col-form-label">Nome do produto:</label>
@@ -44,7 +44,7 @@
           </div>
           <div class="modal-footer footer-editar">           
             <button type="button" class="btn btn-secondary">Cancelar</button>
-            <input type="submit" class="btn btn-secondary"  data-bs-dismiss="modal" value="Confirmar" ng-hide="ocultar(produtoSelecionado)" >
+            <input type="submit" class="btn btn-secondary"  data-bs-dismiss="modal" value="Confirmar" >
           </div>
         </form>
       </div>
