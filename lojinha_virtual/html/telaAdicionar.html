@@ -40,18 +40,15 @@ Inválido = {{adicionaProduto.$invalid}} -->
       <label for="" class="form-label">Nome do produto:</label>
       <input type="text" ng-required="true" ng-model="produto.nome" class="form-control" id="produto"
         aria-describedby="produto">
-      <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+
     </div>
     <div class="mb-3">
       <label for="descricao" class="form-label">Descrição do produto:</label>
       <input type="text" ng-model="produto.descricao" ng-required="true" class="form-control" id="descricao">
-    
+
     </div>
-  
+
     <div class="row g-3">
-      <!-- <div class="col-sm-7">
-              <input type="text" class="form-control" placeholder="City" aria-label="City">
-            </div> -->
       <div class="col-sm-3">
         <label for="valor" class="form-label">Valor do produto:</label>
         <input type="text" ng-model="produto.valor" mask-currency="'R$'"

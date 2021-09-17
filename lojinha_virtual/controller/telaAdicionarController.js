@@ -18,11 +18,14 @@ angular.module("lojaModulo")
         }
 
         $scope.modal = modalErro;
+        
 
 
         //adiciona produto no formulário e envia para o Banco de dados:    
         $scope.adiciona_produto = function (isValid) {
             if (isValid) {
+                // $scope.produto.valor = parseFloat(produto.valor);
+
                 $http.post(
                     "http://localhost:3000/produtos",
                     JSON.stringify($scope.produto)
@@ -57,6 +60,17 @@ angular.module("lojaModulo")
             };
 
         };
+
+        // function newProduto(produto){
+        //     $scope.produto = {
+        //         "id": 0,
+        //         "nome": "",
+        //         "descricao": "produto.",
+        //         "valor": parseFloat(produto.valor),
+        //         "quantidade": ""
+        //     };
+
+        // }
 
 
 

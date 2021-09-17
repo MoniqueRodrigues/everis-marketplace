@@ -11,7 +11,7 @@
       <div class="modal-body" >
 
         <!-- formulário edita produto -->
-        <form ng-submit="edita_produto(editaProduto.$valid, produtoSelecionado)" name="editaProduto" class="editaProduto" ng-show = "produtoSelecionado.valor > 0 || produtoSelecionado.quantidade > 0" >
+        <form ng-submit="edita_produto(editaProduto.$valid, produtoSelecionado)" name="editaProduto" class="editaProduto" >
           <div class="mb-3 row">
             <input type="hidden" ng-model="editar.id" />
             <label for="inputProduto" class="col-sm-5 col-form-label">Nome do produto:</label>
@@ -33,9 +33,11 @@
             <label for="inputValor" class="col-sm-5 col-form-label">Valor do produto:</label>
             <div class="col-sm-7">
               <input type="text" ng-model="produtoSelecionado.valor" mask-currency="'R$'"
-                config="{group:'.',decimal:',',indentation:' '}" name="valor" ng-required="true" class="form-control">
+                config="{group:'.',decimal:',',indentation:' '}" name="valor" ng-required="true" class="form-control" min="0">
             </div>
           </div>
+
+          
           <div class="mb-3 row">
             <label for="inputQuantidade" class="col-sm-5 col-form-label">Quantidade do produto:</label>
             <div class="col-sm-7">

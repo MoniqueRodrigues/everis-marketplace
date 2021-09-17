@@ -5,6 +5,7 @@ angular.module("lojaModulo")
         $scope.titulo = "Lojinha Virtual do Só Vamu";
         $scope.tituloBusca = "O que você está procurando?" //filtro(opções)
         $scope.listaProdutos = [];
+      
 
 
         //deleta produto:
@@ -69,16 +70,16 @@ angular.module("lojaModulo")
 
 
         // mostra produto:
-        $scope.mostrar = function (produto) {
-            console.log("mostra", produto)
-            $scope.mostra = true;
-            if (produto.quantidade != 0 || produto.valor != 0) {
-                return $scope.mostra;
+        // $scope.mostrar = function (produto) {
+        //     console.log("mostra", produto)
+        //     $scope.mostra = true;
+        //     if (produto.quantidade != 0 || produto.valor != 0) {
+        //         return $scope.mostra;
 
-            }
+        //     }
             
 
-        }
+        // }
 
 
 
