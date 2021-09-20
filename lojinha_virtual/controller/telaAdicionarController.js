@@ -8,6 +8,8 @@ angular.module("lojaModulo")
         //conteúdo modal sucesso ou erro:
 
 
+
+
         const modalSucesso = {
             "titulo": "Produto adicionado com sucesso",
             "descricao": "Deseja cadastrar outro produto?"
@@ -17,14 +19,13 @@ angular.module("lojaModulo")
             "descricao": "Deseja cadastrar novamente?"
         }
 
-        $scope.modal = modalErro;
-        
+        $scope.modal = modalErro;     
+     
 
 
         //adiciona produto no formulário e envia para o Banco de dados:    
         $scope.adiciona_produto = function (isValid) {
-            if (isValid) {
-                // $scope.produto.valor = parseFloat(produto.valor);
+            if (isValid) {               
 
                 $http.post(
                     "http://localhost:3000/produtos",
@@ -61,16 +62,7 @@ angular.module("lojaModulo")
 
         };
 
-        // function newProduto(produto){
-        //     $scope.produto = {
-        //         "id": 0,
-        //         "nome": "",
-        //         "descricao": "produto.",
-        //         "valor": parseFloat(produto.valor),
-        //         "quantidade": ""
-        //     };
-
-        // }
+        
 
 
 

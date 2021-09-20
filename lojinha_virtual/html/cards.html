@@ -1,9 +1,9 @@
-<div class="card border-dark mb-3" style="width: 15rem" ; ng-repeat="lista in listaProdutos | filter:busca_Projeto" ng-if= "lista.valor >= 1 || lista.quantidade >= 1"   >
+<div class="card border-dark mb-3" style="width: 15rem" ; ng-repeat="lista in listaProdutos | filter:busca_Projeto" ng-hide= "lista.valor <= 0 || lista.quantidade ===0 ">
     <!-- <img src="..." class="card-img-top" alt="..."> -->
     <div class="card-body cards">
         <p>{{lista.nome}}</p>
-        <p>{{lista.descricao}}</p>        
-        <p>{{lista.valor}}</p>
+        <p>{{lista.descricao}}</p>   
+         <p>{{lista.valor}}</p>        
         <p>{{lista.quantidade}}</p>
     </div>
     <!-- icones do crud: -->

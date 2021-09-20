@@ -5,6 +5,13 @@ angular.module("lojaModulo")
         $scope.titulo = "Lojinha Virtual do Só Vamu";
         $scope.tituloBusca = "O que você está procurando?" //filtro(opções)
         $scope.listaProdutos = [];
+     
+        
+        $scope.listaValor = function (lista) { 
+            return parseFloat(lista.valor);
+        }
+   
+       
       
 
 
@@ -17,9 +24,10 @@ angular.module("lojaModulo")
 
         //lista produto na página principal:
         $http.get("http://localhost:3000/produtos")
-            .then(function (response) {
+            .then(function (response) {            
                 $scope.listaProdutos = response.data;
-                // console.log($scope.listaProdutos);
+            
+           
             });
 
 
