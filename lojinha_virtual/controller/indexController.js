@@ -1,19 +1,15 @@
 angular.module("lojaModulo")
     .controller("indexController", function ($scope, $http) {
 
-
         $scope.titulo = "Lojinha Virtual do Só Vamu";
         $scope.tituloBusca = "O que você está procurando?" //filtro(opções)
         $scope.listaProdutos = [];
-     
-        
-        $scope.listaValor = function (lista) { 
+
+
+
+        $scope.listaValor = function (lista) {
             return parseFloat(lista.valor);
         }
-   
-       
-      
-
 
         //deleta produto:
         // $scope.exclui_produto = function (id) {
@@ -24,13 +20,11 @@ angular.module("lojaModulo")
 
         //lista produto na página principal:
         $http.get("http://localhost:3000/produtos")
-            .then(function (response) {            
+            .then(function (response) {
                 $scope.listaProdutos = response.data;
-            
-           
+
+
             });
-
-
 
 
         //visualizar as informações do produto no modal:
@@ -39,6 +33,19 @@ angular.module("lojaModulo")
             // console.log("index", lista);
             $scope.produtoSelecionado = lista;
         };
+
+
+
+
+
+
+        let modal_editar_sucesso = document.getElementById("modalEditarSucesso");
+        console.log(' Mostra modal sucesso:', modal_editar_sucesso);
+
+        let modal_editar_erro = document.getElementById("modalEditarErro");
+        console.log('Mostra modal erro', modal_editar_erro);
+
+
 
 
 
@@ -58,36 +65,25 @@ angular.module("lojaModulo")
                 }).then(function (response) {
                     console.log("dados alterados com sucesso", response)
                     produto = response.data;
+                    // let modal_editar_sucesso;
+
+
 
                 }, function (err) {
                     console.log("erro ao editar", err)
+                    // let modal_editar_erro;
                 });
 
             }
         }
 
-        // oculta produto:
-        // $scope.ocultar = function (produto) {
-        //     console.log("oculta, produto")
-        //     $scope.oculta = true;
-        //     if (produto.valor <1 || produto.quantidade === 0) {
-        //         return $scope.oculta;
-        //     }
-
-        // }
 
 
-        // mostra produto:
-        // $scope.mostrar = function (produto) {
-        //     console.log("mostra", produto)
-        //     $scope.mostra = true;
-        //     if (produto.quantidade != 0 || produto.valor != 0) {
-        //         return $scope.mostra;
 
-        //     }
-            
 
-        // }
+
+
+
 
 
 
@@ -107,4 +103,59 @@ angular.module("lojaModulo")
         $scope.exibir = function () {
             $scope.visivel = !$scope.visivel;
         }
+
+
+
+        //validação de modais- editar: sucesso ou erro:
+
+
+
+
+        // carrega página principal:
+        $scope.carrega_pagina = function () {
+            return window.location.replace('http://127.0.0.1:5500/html/index.html');
+
+        }
+
+
+
+        // EDITAR fecha modal sucesso/erro:
+        $scope.modal_fechar = function () {
+            var modalEditar = document.getElementById('editaModal').style.display = 'none';
+            console.log("modalEditar:", editaModal);
+            //carrega a página. 
+            // window.location.replace('http://127.0.0.1:5500/html/index.html');
+            $scope.carrega_pagina();
+        };
+
+
+
+
+        // Disparar modal sucesso ou erro:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     })
