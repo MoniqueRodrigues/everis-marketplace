@@ -11,10 +11,7 @@ angular.module("lojaModulo")
             return parseFloat(lista.valor);
         }
 
-        //deleta produto:
-        // $scope.exclui_produto = function (id) {
-        //     $http.delete("http://localhost:3000/produtos/" + id)
-        // }
+
 
 
 
@@ -22,7 +19,6 @@ angular.module("lojaModulo")
         $http.get("http://localhost:3000/produtos")
             .then(function (response) {
                 $scope.listaProdutos = response.data;
-
 
             });
 
@@ -34,16 +30,6 @@ angular.module("lojaModulo")
             $scope.produtoSelecionado = lista;
         };
 
-
-
-
-
-
-        let modal_editar_sucesso = document.getElementById("modalEditarSucesso");
-        console.log(' Mostra modal sucesso:', modal_editar_sucesso);
-
-        let modal_editar_erro = document.getElementById("modalEditarErro");
-        console.log('Mostra modal erro', modal_editar_erro);
 
 
 
@@ -65,17 +51,53 @@ angular.module("lojaModulo")
                 }).then(function (response) {
                     console.log("dados alterados com sucesso", response)
                     produto = response.data;
-                    // let modal_editar_sucesso;
+                    $('#modalEditarSucesso').modal('show');
 
-
-
-                }, function (err) {
+                }).catch(function (err) {
                     console.log("erro ao editar", err)
-                    // let modal_editar_erro;
-                });
+                  $('#modalEditarErro').modal('show');
+
+
+                }  )
+
+            }else{
+                $('#modalEditarErro').modal('show');                
 
             }
+            
+        };
+
+
+        
+        // deleta produto:
+        $scope.deletaProduto = function (produto) {
+            $http({
+                url:"http://localhost:3000/produtos/" + produto.id,
+                method: 'DELETE',
+                data: produto,
+                headers: {
+                    "Content-Type": "application/json"
+                }
+
+            }).then(function(response){
+                console.log("dados deletados com sucesso", response)
+                produto = response.data;
+
+
+
+
+            }).catch(function(erro){
+                console.log("erro ao deletar", erro )
+
+
+            })
+            
+            
+         
         }
+
+
+
 
 
 
@@ -106,8 +128,7 @@ angular.module("lojaModulo")
 
 
 
-        //validação de modais- editar: sucesso ou erro:
-
+    
 
 
 
@@ -116,8 +137,6 @@ angular.module("lojaModulo")
             return window.location.replace('http://127.0.0.1:5500/html/index.html');
 
         }
-
-
 
         // EDITAR fecha modal sucesso/erro:
         $scope.modal_fechar = function () {
@@ -131,7 +150,7 @@ angular.module("lojaModulo")
 
 
 
-        // Disparar modal sucesso ou erro:
+        
 
 
 
