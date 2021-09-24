@@ -7,15 +7,10 @@ angular.module("lojaModulo")
 
 
 
-        $scope.listaValor = function (lista) {
-            return parseFloat(lista.valor);
-        }
 
 
 
-
-
-        //lista produto na página principal:
+        //LISTA PRODUTO NA PÁGINA INICIAL:
         $http.get("http://localhost:3000/produtos")
             .then(function (response) {
                 $scope.listaProdutos = response.data;
@@ -23,7 +18,8 @@ angular.module("lojaModulo")
             });
 
 
-        //visualizar as informações do produto no modal:
+
+        //VISUALIZA CADA PRODUTO:
         $scope.mostraProduto = function (lista, index) {
             // console.log("produto", lista);
             // console.log("index", lista);
@@ -32,10 +28,7 @@ angular.module("lojaModulo")
 
 
 
-
-
-
-        // edita produto na página principal:
+        // EDITA PRODUTO NA PÁGINA PRINCIPAL:
         $scope.edita_produto = function (isValid, produto) {
             // console.log("meu objeto", produto)
             // console.log("is valid?", isValid)
@@ -56,57 +49,51 @@ angular.module("lojaModulo")
                 }).catch(function (err) {
                     console.log("erro ao editar", err)
                     $('#modalEditarErro').modal('show');
-
-
                 })
 
             } else {
                 $('#modalEditarErro').modal('show');
-
             }
 
         };
 
 
-        
 
-
-
-        // deleta produto:
+        //DELETA PRODUTO:
         $scope.deletaProduto = function (produto) {
             console.log(produto);
 
-           
-                $http({
-                    url: "http://localhost:3000/produtos/" + produto.id,
-                    method: 'DELETE',
-                    data: produto,
-                    headers: {
-                        "Content-Type": "application/json"
-                    }
 
-                }).then(function (response) {
-                    console.log("dados deletados com sucesso", response)
-                    produto = response.data;                 
-                    $('#modalExcluirSucesso').modal('show');
-                 
+            $http({
+                url: "http://localhost:3000/produtos/" + produto.id,
+                method: 'DELETE',
+                data: produto,
+                headers: {
+                    "Content-Type": "application/json"
+                }
 
-                }).catch(function (erro) {
-                    console.log("erro ao deletar", erro);
-                    $('#modalExcluirErro').modal('show');                  
-                })
-            };
-
-            $scope.chamaModalInformativoExcluir= function(){
-                $('#modalExcluirInformativo').modal('show'); 
-                console.log( "chamou"); 
-
-            }
-
-    
+            }).then(function (response) {
+                console.log("dados deletados com sucesso", response)
+                produto = response.data;
+                $('#modalExcluirSucesso').modal('show');
 
 
-        //switch:
+            }).catch(function (erro) {
+                console.log("erro ao deletar", erro);
+                $('#modalExcluirErro').modal('show');
+            })
+        };
+
+        $scope.chamaModalInformativoExcluir = function () {
+            $('#modalExcluirInformativo').modal('show');
+            console.log("chamou");
+
+        }
+
+
+
+
+        //SWITCH:
         // define a visibilidade inicial
         $scope.visivel = false;
         //função para exibir o elemento
@@ -115,19 +102,15 @@ angular.module("lojaModulo")
         }
 
 
-        // carrega página principal:
+        //CARREGA PÁGINA PRINCIPAL:
         $scope.carrega_pagina = function () {
             return window.location.replace('http://127.0.0.1:5500/html/index.html');
 
         }
 
-        // EDITAR fecha modal sucesso/erro:
-        $scope.modal_fechar = function () {
-            var modalEditar = document.getElementById('editaModal').style.display = 'none';
-            console.log("modalEditar:", editaModal);           
-            $scope.carrega_pagina();
+        // EDITAR- FECHAR MODAL INFORMATIVO:
+        $scope.modal_fechar = function () {          
+            $('#editaModal').modal('hide');
         };
-
-
 
     })
