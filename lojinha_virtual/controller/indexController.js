@@ -55,67 +55,55 @@ angular.module("lojaModulo")
 
                 }).catch(function (err) {
                     console.log("erro ao editar", err)
-                  $('#modalEditarErro').modal('show');
+                    $('#modalEditarErro').modal('show');
 
 
-                }  )
+                })
 
-            }else{
-                $('#modalEditarErro').modal('show');                
+            } else {
+                $('#modalEditarErro').modal('show');
 
             }
-            
+
         };
 
 
         
+
+
+
         // deleta produto:
         $scope.deletaProduto = function (produto) {
-            $http({
-                url:"http://localhost:3000/produtos/" + produto.id,
-                method: 'DELETE',
-                data: produto,
-                headers: {
-                    "Content-Type": "application/json"
-                }
+            console.log(produto);
 
-            }).then(function(response){
-                console.log("dados deletados com sucesso", response)
-                produto = response.data;
+           
+                $http({
+                    url: "http://localhost:3000/produtos/" + produto.id,
+                    method: 'DELETE',
+                    data: produto,
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
 
+                }).then(function (response) {
+                    console.log("dados deletados com sucesso", response)
+                    produto = response.data;                 
+                    $('#modalExcluirSucesso').modal('show');
+                 
 
+                }).catch(function (erro) {
+                    console.log("erro ao deletar", erro);
+                    $('#modalExcluirErro').modal('show');                  
+                })
+            };
 
+            $scope.chamaModalInformativoExcluir= function(){
+                $('#modalExcluirInformativo').modal('show'); 
+                console.log( "chamou"); 
 
-            }).catch(function(erro){
-                console.log("erro ao deletar", erro )
+            }
 
-
-            })
-            
-            
-         
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 
 
         //switch:
@@ -127,11 +115,6 @@ angular.module("lojaModulo")
         }
 
 
-
-    
-
-
-
         // carrega página principal:
         $scope.carrega_pagina = function () {
             return window.location.replace('http://127.0.0.1:5500/html/index.html');
@@ -141,39 +124,9 @@ angular.module("lojaModulo")
         // EDITAR fecha modal sucesso/erro:
         $scope.modal_fechar = function () {
             var modalEditar = document.getElementById('editaModal').style.display = 'none';
-            console.log("modalEditar:", editaModal);
-            //carrega a página. 
-            // window.location.replace('http://127.0.0.1:5500/html/index.html');
+            console.log("modalEditar:", editaModal);           
             $scope.carrega_pagina();
         };
-
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -1,10 +1,12 @@
 <div class="card border-dark mb-3" style="width: 15rem" ; ng-repeat="lista in listaProdutos | filter:busca_Projeto" ng-hide= "lista.valor <= 0 || lista.quantidade ===0 ">
     <!-- <img src="..." class="card-img-top" alt="..."> -->
+
+
     <div class="card-body cards">
         <p>{{lista.nome}}</p>
         <p>{{lista.descricao}}</p>   
          <p>{{lista.valor}}</p>        
-        <p>{{lista.quantidade}}</p>
+    
     </div>
     <!-- icones do crud: -->
     <div class="icons_Crud" ng-show="visivel">
@@ -18,12 +20,9 @@
         </svg>
 
 
-
-
-
         <!-- exclui produto -->
-        <svg ng-click="deletaProduto(lista)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash"
-            viewBox="0 0 16 16">
+        <svg xmlns="http://www.w3.org/2000/svg" ng-click="mostraProduto(lista,$index)" width="16" height="16" fill="currentColor" class="bi bi-trash"data-bs-toggle="modal" data-bs-target="#modalExcluirInformativo"
+            viewBox="0 0 16 16" >
             <path
                 d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
             <path fill-rule="evenodd"
