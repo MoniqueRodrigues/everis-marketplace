@@ -6,6 +6,8 @@ angular.module("lojaModulo")
 
 
 
+
+
         //CONTEÚDO MODAL SUCESSO OU ERRO:
         const modalSucesso = {
             "titulo": "Produto adicionado com sucesso",
