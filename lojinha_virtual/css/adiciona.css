@@ -1,10 +1,28 @@
 
 
 
+body{
+    color:#505050;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+
+.titulo_lojinha{
+    background-color:#9AAE04;
+    margin-top:auto;
+  
+
+}
+
+.valor_quantidade{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
 .adicionaProduto{
-    margin-top: 100px;
-   
-   
+    margin-top: 100px;  
 
 }
 

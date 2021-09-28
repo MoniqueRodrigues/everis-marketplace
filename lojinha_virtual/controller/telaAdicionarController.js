@@ -1,7 +1,7 @@
 angular.module("lojaModulo")
     .controller("telaAdicionarController", function ($scope, $http) {
 
-        $scope.titulo = "Vamu que vamu"
+        $scope.titulo = "Lojinha virtual do Só Vamu"
 
 
 

@@ -27,7 +27,7 @@
 
 
 <body ng-controller="telaAdicionarController">
-  <h3 class="titulo" ng-bind="titulo"></h3>
+  <h3 class="titulo titulo_lojinha" ng-bind="titulo"></h3>
 
 
   <!-- Válido = {{adicionaProduto.$valid}}
@@ -48,7 +48,7 @@ Inválido = {{adicionaProduto.$invalid}} -->
 
     </div>
 
-    <div class="row g-3">
+    <div class="row g-3 valor_quantidade">
       <div class="col-sm-3">
         <label for="valor" class="form-label">Valor do produto:</label>
         <input type="text" ng-model="produto.valor" mask-currency="'R$'"
@@ -64,12 +64,11 @@ Inválido = {{adicionaProduto.$invalid}} -->
     <!-- botoes principais: -->
     <div class="botao_adiciona_exclui">
       <!-- cancelar -->
-      <button type="button" class="btn btn-primary btn-sm btn-cancelar" data-bs-toggle="modal"
+      <button type="button" class="btn btn-primary btn-sm btn-cancelar botao_cancela" data-bs-toggle="modal"
         data-bs-target="#exampleModal">Cancelar</button>
 
       <!-- adicionar -->
-      <button data-bs-toggle="modal" data-bs-target="#modal"
-        class="btn btn-secondary btn-sm btn-adicionar">Adicionar</button>
+      <button data-bs-toggle="modal" data-bs-target="#modal"class="btn btn-secondary btn-sm btn-adicionar botao_adiciona" >Adicionar</button>
     </div>
     <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
   </form>

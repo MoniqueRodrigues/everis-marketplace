@@ -1,25 +1,58 @@
+
+
 @media (max-width:375px){
-    .titulo{
+
+    .container_body{
+        overflow-x: hidden
+    };
+
+
+
+    
+ .titulo{
         text-align:center;
         font-size: 1em;
         margin-top:20px;
-        /* border-bottom: 1px solid blue; */
-        color: #505050;
+        color: #ffffff;
+        /* border-bottom: 1px solid blue; */   
+      
 
+    }    
+
+    .form-switch{
+        margin-left:290px;
+      
     }
 
+    .adiciona-produto {
+        display: flex;
+        position: relative;
+        left: 200px;
+        bottom: 91px;
+        padding: 10px;
+    }
 
+    .select_itens{
+        margin-top:40px;
+        margin-left:30px;
+        width:120px;
+        border-color:#ced4da;
+    
+        
+    }
 
-
-
-
-
-
-
-
-
+    
 
 
 
 
 }
+
+
+
+
+
+
+
+
+

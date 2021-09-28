@@ -57,19 +57,15 @@ body{
 /* switches */
 .form-switch{
     display: flex;
-    margin-left:950px;
+    margin-left:1100px;
   
 }
+
 .form-check-input:checked{
     background-color:#9AAE04;
-    border-color:#9AAE04;
-    
+    border-color:#9AAE04;   
 
 }
-
-
-
-
 
 /* campo de busca */
 
@@ -116,7 +112,7 @@ body{
 /* filtro */
 .select_itens{
     margin-top:40px;
-    margin-left:60px;
+    margin-left:123px;
     width:120px;
     border-color:#ced4da;
 
@@ -156,21 +152,36 @@ body{
 
 /* //card */
 .card{
-    width:200px;  
+    /* width:200px;   */
     /* margin-left:180px; */
    
-    flex-direction: row;
+    /* flex-direction: row; */
     /* margin:auto;    */
     border: none;   
 
 }
 
-.row.ng-scope{
+.card{
+    width:200px; 
+    height: 300px; 
+    margin-left:100px;  
+    flex-direction: row;
+    /* margin:auto;    */
+    /* border: none;    */
+
+}
+
+
+
+
+
+
+/* .row.ng-scope{
     margin: 10px;
     display: flex;
     justify-content: center;
 
-    }
+    } */
 
 /* 
 .card-body{
@@ -219,49 +230,6 @@ body{
 .modalSucesso{
     text-align:center;
 }
-
-
-
-
-
-
-@media (max-width:375px){
-    .titulo{
-        text-align:center;
-        font-size: 1em;
-        margin-top:20px;
-        /* border-bottom: 1px solid blue; */
-        color: #505050;
-
-    }
-
-    /* .select_itens{
-        margin-top:40px;
-        margin-left:40px;
-        width:100px;
-        border-color:#ced4da;
-    
-        
-    } */
-
-    .form-switch{
-        display: flex;
-        margin-left:2px;
-      
-    }
-   
-
-    
-
-
-
-
-}
-
-
-
-
-
 
 
 
