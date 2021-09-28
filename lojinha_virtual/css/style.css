@@ -1,26 +1,70 @@
-/* *{
-    padding: 0;
-} */
+/* media querie para laptop */
 
-
-.titulo{
-    text-align: center;
-    margin-top:15px;
-    border-bottom: 1px solid #000000;
+    
+html{
+    overflow-x: hidden;
+    overflow-y: auto;
    
 }
 
-/* 
-menu */
+body{
+    color:#505050;
+    font-family:Arial, Helvetica, sans-serif;
+}
 
+
+.titulo_lojinha{
+    background-color:#9AAE04;
+    padding: 10px;
+}
+
+.icone_pessoa{
+    position: relative;
+    bottom:60px;
+    width:25px;
+    height:25px;
+    color: white;
+ 
+}
+
+
+
+.titulo{
+    /* font-family:Arial, Helvetica, sans-serif; */
+    text-align: center;
+    margin-top:15px;
+    /* border-bottom: 1px solid #9AAE04; */
+    color: #ffffff;
+   
+}
+
+/* menu */
+/* 
+.navbar-toggler{ 
+    
+
+} */
+
+
+.container_body{
+   
+    max-width:900px;
+    margin: 0 auto;
+    }
 
 
 
 /* switches */
 .form-switch{
     display: flex;
-    margin-left:1200px;
+    margin-left:950px;
   
+}
+.form-check-input:checked{
+    background-color:#9AAE04;
+    border-color:#9AAE04;
+    
+
 }
 
 
@@ -30,16 +74,13 @@ menu */
 /* campo de busca */
 
 .titulo_busca{
-    /* position:relative; */
-    /* bottom:20px; */
-margin-left:200px;
- 
-
-
+    margin-left:30px;
+    
+    /* color:#505050; */
 } 
 
 
-.x{
+/* .x{
     padding: 5px 390px;
     padding-left:400px ;
     padding-right:400px;
@@ -47,45 +88,111 @@ margin-left:200px;
     display: flex;
     margin:auto;
 
+} */
+
+.busca{
+    width: 100%;
+    padding: 0 30px;
+
 }
+.campo-busca{
+    border-radius: 20px; 
+    margin:auto;
+    /* width:1000px;  */
+}
+
+
+.icon-lupa{
+   position: relative;
+   /* bottom: 10px; */
+   bottom:30px;
+   left:30px;
+
+    
+}
+
 
 
 /* filtro */
 .select_itens{
     margin-top:40px;
-    margin-left: 150px;
+    margin-left:60px;
+    width:120px;
+    border-color:#ced4da;
+
     
 }
 
 .adiciona-produto{
    display:flex;
    position:relative;
-   left:1120px;
+   left:710px;
+   bottom: 40px;
   
 }
 .adiciona{
     font-size:12px;
     border-radius:10px;
     padding:10px;
+    /* border-color:#ced4da; */
+    border: solid 1px #ced4d4;
+    background-color:#9AAE04;
 }
 
 
-/* cards */
-.row{
+
+
+/* cards */ 
+/* /* .row{
     display: flex;
     justify-content:space-around;
     margin-top:50px;
 
    
+} */
+
+
+
+
+/* //card */
+.card{
+    width:200px;  
+    /* margin-left:180px; */
+   
+    flex-direction: row;
+    /* margin:auto;    */
+    border: none;   
+
 }
 
-.card{
-    margin-left:100px;
+.row.ng-scope{
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+
+    }
+
+/* 
+.card-body{
+    padding-top:20px;
+
+} */
+
+
+.valor_produto{
+    font-weight:600;
+    font-size:18px;
+}
+
+
  
-} 
 
 .icons_Crud{
-   padding-left:160px;
+   /* padding-left:160px; */
+   margin-bottom: 500px;
+   position: relative;
+   bottom: 150px;
+   left:100px;
 
 
 }
@@ -97,12 +204,13 @@ margin-left:200px;
     display: flex;
     margin-top:100px;
   justify-content:center;
+  color:#9AAE04;
  
     
 
 }
 .page-link{
-    color:#000000;
+    color:#505050;
 
 
 }
@@ -111,6 +219,49 @@ margin-left:200px;
 .modalSucesso{
     text-align:center;
 }
+
+
+
+
+
+
+@media (max-width:375px){
+    .titulo{
+        text-align:center;
+        font-size: 1em;
+        margin-top:20px;
+        /* border-bottom: 1px solid blue; */
+        color: #505050;
+
+    }
+
+    /* .select_itens{
+        margin-top:40px;
+        margin-left:40px;
+        width:100px;
+        border-color:#ced4da;
+    
+        
+    } */
+
+    .form-switch{
+        display: flex;
+        margin-left:2px;
+      
+    }
+   
+
+    
+
+
+
+
+}
+
+
+
+
+
 
 
 

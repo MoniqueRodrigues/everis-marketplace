@@ -1,12 +1,14 @@
-<div class="card border-dark mb-3" style="width: 15rem" ; ng-repeat="lista in listaProdutos | filter:busca_Projeto"
+<div class="card mb-3 row " id="container_cards" ng-repeat="lista in listaProdutos | filter:busca_Projeto"
     ng-hide="lista.valor <= 0 || lista.quantidade ===0 ">
-    <!-- <img src="..." class="card-img-top" alt="..."> -->
+    <img src="../img/2.jfif" class="card-img-top" alt="...">
 
 
-    <div class="card-body cards">
+
+    
+    <div class="card-body cards" >        
         <p>{{lista.nome}}</p>
         <p>{{lista.descricao}}</p>
-        <p>{{lista.valor | currency: "R$ "}}</p>
+        <p class="valor_produto">{{lista.valor | currency: "R$ "}}</p>
 
     </div>
     <!-- icones do crud: -->

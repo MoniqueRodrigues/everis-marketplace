@@ -8,78 +8,99 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/adiciona.css">
+  <link rel="stylesheet" href="../css/mobile.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
     </script>
-
   <script src="../angular/angular.js"></script>
   <script src="../module.js"></script>
   <script src="../controller/indexController.js"></script>
   <script src="../node_modules/angularjs-currency-input-mask/dist/angularjs-currency-input-mask.min.js"></script>
-
-
 
 </head>
 
 
 <body ng-controller="indexController">
 
-  <h3 class="titulo" ng-bind="titulo"></h3>
+
+  <div class="titulo_lojinha">
+    <h3 class="titulo" ng-bind="titulo"></h3>
+  </div>
 
 
   <!-- menu -->
-  <nav class="navbar navbar-light">
-    <div class="container-fluid">
+  <nav class="navbar navbar-light ">
+    <div class="container-fluid menu-hamburguer">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false"
         aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-person-circle icone_pessoa"
+        viewBox="0 0 16 16">
+        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+        <path fill-rule="evenodd"
+          d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+      </svg>
     </div>
   </nav>
 
   </header>
   <main>
 
-
-
     <!-- switch -->
     <div class="form-check form-switch ">
       <input class="form-check-input " type="checkbox" id="flexSwitchCheckDefault" ng-click="exibir()">
     </div>
 
-    <!-- Campo de busca -->
-    <div class=busca>
-      <div class="titulo_busca" ng-bind="tituloBusca"></div>
-      <input class="x" type="text" ng-model="busca_Projeto" placeholder="">
+
+    <div class="container_body">
+
+      <!-- Campo de busca -->
+      <div class=busca>
+        <div class="titulo_busca" ng-bind="tituloBusca"></div>
+        <input type="text" ng-model="busca_Projeto" class="form-control campo-busca" placeholder=""
+          aria-label="default input example">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+          class="bi bi-search icon-lupa" viewBox="0 0 16 16">
+          <path
+            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+        </svg>
+
+
+      </div>
+     
+
+      <!--filtro(opções) -->
+      <select class="select_itens  mb-3" ng-model="produtoSelecionado"
+        ng-options="lista.nome for lista in listaProdutos" ng-change="ordenacao">
+      </select>
+      <!-- adiciona produto -->
+      <div class="adiciona-produto">
+        <a href="./telaAdicionar.html">
+          <button class="adiciona" ng-show="visivel">Adicionar Produto</button>
+        </a>
+      </div>
+
+      <!-- {{produtoSelecionado.produto}} -->
+       <!-- cards-->
+       <div class="row" ng-include="'../html/cards.html'"></div>
+
+
+
+      
+
+
+
     </div>
 
 
 
-    <!--filtro(opções) -->
-    <select class="select_itens border-dark mb-3" ng-model="produtoSelecionado"
-      ng-options="lista.nome for lista in listaProdutos" ng-change="ordenacao">
-    </select>
-    <!-- {{produtoSelecionado.produto}} -->
 
 
-
-    <!-- adiciona produto -->
-    <div class="adiciona-produto">
-      <a href="./telaAdicionar.html">
-        <button class="adiciona" ng-show="visivel">Adicionar Produto</button>
-      </a>
-    </div>
-
-
-
-
-    <!-- cards-->
-    <div class="row" ng-include="'../html/cards.html'"></div>
 
     <!-- modal editar -->
     <div class="row" ng-include="'../html/modal_editar.html'"></div>
