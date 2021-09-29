@@ -4,10 +4,6 @@ angular.module("lojaModulo")
         $scope.titulo = "Lojinha virtual do Só Vamu"
 
 
-
-
-
-
         //CONTEÚDO MODAL SUCESSO OU ERRO:
         const modalSucesso = {
             "titulo": "Produto adicionado com sucesso",

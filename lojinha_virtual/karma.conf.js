@@ -5,8 +5,8 @@ module.exports = function (config) {
         files: [
             'node_modules/angular/angular.js',
             'node_modules/angular-mocks/angular-mocks.js',
-            'lojinha_virtual/controller/telaAdicionarController.js', 
-            'lojinha_virtual/testes/telaAdicionar.spec.js'    
+            'controller/telaAdicionarController.js', 
+            'testes/telaAdicionar.spec.js'   
                  
         ],
         exclude: [],
