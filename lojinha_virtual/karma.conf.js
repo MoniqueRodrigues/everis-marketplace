@@ -5,13 +5,27 @@ module.exports = function (config) {
         files: [
             'node_modules/angular/angular.js',
             'node_modules/angular-mocks/angular-mocks.js',
+            'node_modules/angularjs-currency-input-mask/dist/angularjs-currency-input-mask.min.js',
+            'module.js',
             'controller/telaAdicionarController.js', 
-            'testes/telaAdicionar.spec.js'   
+            'controller/indexController.js',
+            'testes/telaAdicionar.spec.js'
                  
         ],
         exclude: [],
-        preprocessors: {},
-        reporters: ['progress'],
+        //preprocessors: {},
+        //reporters: ['progress'],
+        preprocessors: {
+            // source files, that you wanna generate coverage for
+            // do not include tests or libraries
+            // (these files will be instrumented by Istanbul)
+            'src/**/*.js': ['coverage']
+        },
+        coverageReporter: {
+            type : 'html',
+            dir : 'coverage/'
+        },
+        reporters: ['progress', 'coverage'],
         port: 9876,
         hostname: 'localhost',
         listenAddress: 'localhost',
