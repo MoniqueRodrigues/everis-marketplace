@@ -20,9 +20,27 @@
     }    
 
     .form-switch{
-        margin-left:290px;
-      
+        margin-left:250px;   
+                     
     }
+
+    .form-switch .form-check-input {
+        height: 2em;
+        width: 4em;
+       
+    }
+
+    .container_body {
+        margin-top: 50px;
+    }
+
+
+
+    .titulo_busca{
+        font-size: 1.2em;
+
+    }
+   
 
     .adiciona-produto {
         display: flex;
@@ -32,14 +50,43 @@
         padding: 10px;
     }
 
+    .adiciona{
+        width: 120px;
+        height: 70px;
+        font-size: 1em;
+
+    }
+    p{
+        font-size: 1.4em;;
+    }
+
+  
+
+
+    
+
+
     .select_itens{
         margin-top:40px;
         margin-left:30px;
         width:120px;
+        height: 40px;
         border-color:#ced4da;
     
         
     }
+
+    .card{
+        width: 182px;    
+        flex-direction: row;
+        margin-left: 10px;
+
+    }
+
+    .bi-pencil{
+        width:10px;
+    }
+    
 
     
 

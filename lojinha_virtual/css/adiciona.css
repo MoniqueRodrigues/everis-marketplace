@@ -64,3 +64,16 @@ body{
     border: 1px solid #ced4da;
     padding:10px 60px;
 }
+
+
+
+.btn-primary:hover{
+    background-color:#6785C1;
+    border: none;
+
+}
+.btn-secondary:hover{
+    background-color:#6785C1;
+    border: none;
+
+}

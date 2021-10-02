@@ -33,23 +33,6 @@ describe('conjunto de testes', function () {   //describe que agrupa todos os ca
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     //CODIFICANDO TESTES:
 
 //     describe('dado um formulario incompleto, deve ter uma mensagem de erro', function() {
