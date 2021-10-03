@@ -1,39 +1,29 @@
- 
+ @media (max-width:375px) {    
+     
+     .botao_adiciona_exclui {
+         margin-top: 40px;
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-around;
+     }
+     .botao_cancela {
+         margin-bottom: 15px;
+     }
+     .form-label {
+         font-size: 18px;
+     }
 
-@media (max-width:375px){
 
-    .botao_adiciona_exclui{
-        margin-top: 40px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-
+      /* FOOTER */
+    .p_footer{   
+        margin-bottom:100px;
     }
-
-    .botao_cancela{
-        margin-bottom: 15px;
-
+    footer{    
+        padding:5px;  
+        margin-top:60px;    
     }
-
-    .form-label{
-        font-size:18px;
-
-    }
-
-
-    .botao_cancela .botao_adiciona:visited{
-        background-color:#6785C1;
-
-    }
-
 
 
     
-    
 
-
-
-
-}
-
-
+ }

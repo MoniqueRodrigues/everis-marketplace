@@ -14,15 +14,11 @@ body{
 .logotipo{
     position: relative;
     bottom: 125px;
-    left: 100px;
-    
-
-   
+    left: 100px;     
 }
 
 .img_Logo{
-    width: 80px;
-   
+    width: 80px; 
 
 }
 
@@ -263,8 +259,7 @@ body{
 footer{
     background-color:#6785C1;
     padding:60px;
-    font-weight: bold;
-   
+    font-weight: bold;  
    
 }
 

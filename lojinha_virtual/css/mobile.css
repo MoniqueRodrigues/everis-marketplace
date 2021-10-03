@@ -1,32 +1,29 @@
 
-
 @media (max-width:375px){
 
     .container_body{
-        overflow-x: hidden
-    };
+        overflow-x: hidden;
+    } 
 
+   
 
+/* LOGOTIPO */
+    .logotipo{
+        display: none;
+    }
+    .img_Logo{
+        display: none;   
 
-    
- .titulo{
-        text-align:center;
-        font-size: 1em;
-        margin-top:20px;
-        color: #ffffff;
-        /* border-bottom: 1px solid blue; */   
-      
+    }
 
-    }    
-
+    /* SWITCH */
     .form-switch{
-        margin-left:250px;   
-                     
+        margin-left:250px;                       
     }
 
     .form-switch .form-check-input {
-        height: 2em;
-        width: 4em;
+        height: 1.5em;
+        width: 3em;
        
     }
 
@@ -35,13 +32,13 @@
     }
 
 
-
+    /* BUSCA */
     .titulo_busca{
-        font-size: 1.2em;
+        font-size: 1.2em;     
 
-    }
-   
+    }  
 
+    /* BOTAO ADICIONA */
     .adiciona-produto {
         display: flex;
         position: relative;
@@ -52,29 +49,25 @@
 
     .adiciona{
         width: 120px;
-        height: 70px;
+        height: 60px;
         font-size: 1em;
-
     }
     p{
-        font-size: 1.4em;;
+        font-size: 1.4em;
     }
 
-  
-
-
-    
-
+    /*BOTAO SELECIONA */
 
     .select_itens{
         margin-top:40px;
         margin-left:30px;
         width:120px;
-        height: 40px;
-        border-color:#ced4da;
-    
+        height:30px;
+        border-color:#ced4da;   
         
     }
+
+    /* CARDS */
 
     .card{
         width: 182px;    
@@ -83,14 +76,19 @@
 
     }
 
-    .bi-pencil{
-        width:10px;
+    /* FOOTER */
+    
+    .p_footer{   
+        margin-bottom:100px;
+
     }
+
+    footer{
     
-
+        padding:10px;
     
-
-
+    
+    }
 
 
 }

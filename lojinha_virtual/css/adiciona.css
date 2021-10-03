@@ -77,3 +77,13 @@ body{
     border: none;
 
 }
+
+
+      /* FOOTER */
+      .p_footer{   
+        margin-bottom:100px;
+    }
+    footer{    
+        padding:5px;  
+        margin-top:50px;    
+    }
