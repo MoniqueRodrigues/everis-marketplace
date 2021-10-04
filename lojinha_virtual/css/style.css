@@ -10,7 +10,7 @@ body{
     font-family:Arial, Helvetica, sans-serif;
 }
 
-
+/* LOGOTIPO */
 .logotipo{
     position: relative;
     bottom: 125px;
@@ -21,13 +21,6 @@ body{
     width: 80px; 
 
 }
-
-
-.titulo_lojinha{
-    background-color:#9AAE04;
-    padding: 10px;
-}
-
 .icone_pessoa{
     position: relative;
     bottom:60px;
@@ -37,27 +30,21 @@ body{
  
 }
 
+/* TITULO */
+.titulo_lojinha{
+    background-color:#9AAE04;
+    padding: 10px;
+}
 
-
-.titulo{
-    /* font-family:Arial, Helvetica, sans-serif; */
+.titulo{   
     text-align: center;
     margin-top:15px;
-    /* border-bottom: 1px solid #9AAE04; */
     color: #ffffff;
    
 }
 
-/* menu */
-/* 
-.navbar-toggler{ 
-    
-
-} */
-
 
 .container_body{
-   
     max-width:900px;
     margin: 0 auto;
     }
@@ -82,20 +69,8 @@ body{
 .titulo_busca{
     margin-left:30px;
     
-    /* color:#505050; */
+    
 } 
-
-
-/* .x{
-    padding: 5px 390px;
-    padding-left:400px ;
-    padding-right:400px;
-    border-radius: 20px;   
-    display: flex;
-    margin:auto;
-
-} */
-
 .busca{
     width: 100%;
     padding: 0 30px;
@@ -104,13 +79,12 @@ body{
 .campo-busca{
     border-radius: 20px; 
     margin:auto;
-    /* width:1000px;  */
+ 
 }
 
 
 .icon-lupa{
    position: relative;
-   /* bottom: 10px; */
    bottom:30px;
    left:30px;
 
@@ -140,23 +114,11 @@ body{
     font-size:12px;
     border-radius:10px;
     padding:10px;
-    /* border-color:#ced4da; */
     border: solid 1px #ced4d4;
     background-color:#9AAE04;
     color: #ffffff;
 }
 
-
-
-
-/* cards */ 
-/* /* .row{
-    display: flex;
-    justify-content:space-around;
-    margin-top:50px;
-
-   
-} */
 
 #container_cards{
     margin-top:30px;
@@ -164,45 +126,15 @@ body{
 
 
 /* //card */
-.card{
-    /* width:200px;   */
-    /* margin-left:180px; */
-   
-    /* flex-direction: row; */
-    /* margin:auto;    */
-    border: none;   
-
-}
 
 .card{
     width:200px; 
     height: 300px; 
     margin-left:100px;  
     flex-direction: row;
-    /* margin:auto;    */
-    /* border: none;    */
+    border: none; 
 
 }
-
-
-
-
-
-
-/* .row.ng-scope{
-    margin: 10px;
-    display: flex;
-    justify-content: center;
-
-    } */
-
-/* 
-.card-body{
-    padding-top:20px;
-
-} */
-
-
 .valor_produto{
     font-weight:600;
     font-size:18px;
@@ -212,7 +144,6 @@ body{
  
 
 .icons_Crud{
-   /* padding-left:160px; */
    margin-bottom: 500px;
    position: relative;
    bottom: 150px;

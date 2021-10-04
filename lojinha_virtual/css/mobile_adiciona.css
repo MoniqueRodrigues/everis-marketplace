@@ -12,6 +12,11 @@
      .form-label {
          font-size: 18px;
      }
+     .bi-exclamation-triangle-fill {
+        position: relative;
+        margin: auto;
+        left:0;
+    }
 
 
       /* FOOTER */

@@ -1,19 +1,19 @@
 
 
-
 body{
     color:#505050;
     font-family:Arial, Helvetica, sans-serif;
 }
 
 
+/* TITULO */
 .titulo_lojinha{
     background-color:#9AAE04;
-    margin-top:auto;
-  
+    margin-top:auto; 
 
 }
 
+/* FORMULÁRIO */
 .valor_quantidade{
     display: flex;
     justify-content: space-between;
@@ -26,14 +26,13 @@ body{
 
 }
 
+/* BOTÃO */
+
 .botao_adiciona_exclui{
     margin-top: 100px;
     display: flex;
     justify-content: space-around;
 }
-
-
- 
 
 .btn-cancelar, .btn-adicionar {
     background-color: transparent;
@@ -42,6 +41,8 @@ body{
     padding:10px 60px;
 
 }
+
+/* MODAL */
 .modal-footer{
     margin-top: 100px;
     display: flex;
@@ -55,8 +56,11 @@ body{
 .modal-title{
     text-align: center;
     margin-top: 50px;
+    font-size: 1.2em;
 
 }
+
+/* BOTÃO MODAL */
 
 .btn{
     background-color: transparent;
