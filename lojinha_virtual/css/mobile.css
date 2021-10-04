@@ -1,43 +1,31 @@
 
-@media (max-width:375px){
-
-    .container_body{
+/* mobile */
+@media (max-width:375px) {
+    .container_body {
         overflow-x: hidden;
-    } 
-
-   
-
-/* LOGOTIPO */
-    .logotipo{
+    }
+    /* LOGOTIPO */
+    .logotipo {
         display: none;
     }
-    .img_Logo{
-        display: none;   
-
+    .img_Logo {
+        display: none;
     }
-
     /* SWITCH */
-    .form-switch{
-        margin-left:250px;                       
+    .form-switch {
+        margin-left: 300px;
     }
-
     .form-switch .form-check-input {
         height: 1.5em;
         width: 3em;
-       
     }
-
     .container_body {
         margin-top: 50px;
     }
-
-
     /* BUSCA */
-    .titulo_busca{
-        font-size: 1.2em;     
-
-    }  
-
+    .titulo_busca {
+        font-size: 1.2em;
+    }
     /* BOTAO ADICIONA */
     .adiciona-produto {
         display: flex;
@@ -46,58 +34,113 @@
         bottom: 91px;
         padding: 10px;
     }
-
-    .adiciona{
+    .adiciona {
         width: 120px;
         height: 60px;
         font-size: 1em;
     }
-    p{
+    p {
         font-size: 1.4em;
     }
-
     /*BOTAO SELECIONA */
-
-    .select_itens{
-        margin-top:40px;
-        margin-left:30px;
-        width:120px;
-        height:30px;
-        border-color:#ced4da;   
-        
+    .select_itens {
+        margin-top: 40px;
+        margin-left: 30px;
+        width: 120px;
+        height: 30px;
+        border-color: #ced4da;
     }
-
     /* CARDS */
-
-    .card{
-        width: 182px;    
+    .card {
+        width: 182px;
         flex-direction: row;
         margin-left: 10px;
-
     }
-
     /* FOOTER */
-    
-    .p_footer{   
-        margin-bottom:100px;
+    .p_footer {
+        margin-bottom: 100px;
+    }
+    footer {
+        padding: 10px;
+    }
+}
 
+
+/* tablet: */
+@media (width:768px) {
+    .container_body {
+        overflow-x: hidden;
+    }
+    /* SWITCH */
+    .form-switch {
+        margin-left: 700px;
+    }
+    /* BOTAO ADICIONA */
+    .adiciona-produto {
+        display: flex;
+        position: relative;
+        left: 600px;
+        bottom: 45px;
+        padding: 10px;
+    }
+    .adiciona {
+        width: 120px;
+        height: 60px;
+        font-size: 1em;
     }
 
-    footer{
-    
-        padding:10px;
-    
-    
+    /* LOGOTIPO */
+    .logotipo{
+        position: relative;
+        bottom: 125px;
+        left:20px;     
     }
-
+    
+    
 
 }
 
 
 
+/* desktop: */
+
+@media (width:1024px) {
+
+  
+    .container_body {
+        overflow-x: hidden;
+    }
+    /* SWITCH */
+    .form-switch {
+        margin-left:900px;
+    }
+    /* BOTAO ADICIONA */
+    .adiciona-produto {
+        display: flex;
+        position: relative;
+        left: 700px;
+        bottom: 45px;
+        padding: 10px;
+    }
+    .adiciona {
+        width: 120px;
+        height: 60px;
+        font-size: 1em;
+    }
 
 
+    /* LOGOTIPO */
+    .logotipo{
+        position: relative;
+        bottom: 125px;
+        left:30px;     
+    }
+    
+    .img_Logo{
+        width: 70px; 
+    
+    }
 
-
+}
 
 
