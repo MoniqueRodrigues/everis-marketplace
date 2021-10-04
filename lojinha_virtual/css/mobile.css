@@ -95,6 +95,20 @@
         bottom: 125px;
         left:20px;     
     }
+
+    .card{
+        width:200px; 
+        height: 300px; 
+        margin-left:0px;  
+        flex-direction: row;
+        border: none; 
+       
+    
+    }
+
+    .row{
+        justify-content: space-around;
+    }
     
     
 
